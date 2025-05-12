@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -170,7 +170,117 @@ input[type=submit]:hover {
         .sticky span{
             color:blanchedalmond
         }
-
+.contact-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15);
+  padding: 24px 32px;
+  margin: 32px 0 24px 0;
+  max-width: 400px;
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+.contact-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(224,138,26,0.25);
+}
+.contact-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(224, 138, 26);
+  margin-bottom: 8px;
+  transition: color 0.3s, text-shadow 0.3s;
+  cursor: pointer;
+  display: inline-block;
+}
+.contact-name:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #e08a1a, 0 0 20px #e08a1a;
+  background: linear-gradient(90deg, #e08a1a 40%, #fffbe6 100%);
+  border-radius: 8px;
+  padding: 2px 12px;
+}
+.contact-info {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.container {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 28px 24px;
+  box-shadow: 0 4px 24px 0 rgba(31,38,135,0.10);
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  transition: box-shadow 0.3s;
+}
+.container:hover {
+  box-shadow: 0 8px 32px 0 rgba(224,138,26,0.15);
+}
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #e08a1a;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+  border: 1.5px solid #ffb84d;
+  box-shadow: 0 0 8px #ffe0b2;
+  outline: none;
+}
+input[type=submit] {
+  background: linear-gradient(90deg, #e08a1a, #ffb84d);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(224,138,26,0.10);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+input[type=submit]:hover {
+  background: linear-gradient(90deg, #ffb84d, #e08a1a);
+  box-shadow: 0 4px 16px rgba(224,138,26,0.18);
+}
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 2.2rem;
+  color: #e08a1a;
+  transition: color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+  color: #ffb84d;
+  transform: scale(1.2) rotate(-8deg);
+}
+.overlay {
+  background: rgba(0,0,0,0.6);
+  min-height: 100vh;
+  padding-top: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heading h1 {
+  font-size: 2.7rem;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 12px #e08a1a;
+}
+@media (max-width: 700px) {
+  .container { padding: 16px 6px; }
+  .contact-card { padding: 16px 8px; }
+  .heading h1 { font-size: 2rem; }
+}
 </style>
 </head>
 <body>
@@ -204,56 +314,60 @@ input[type=submit]:hover {
 </div>
   <div class="overlay">
     <div class="heading"><h1>CONTACT US</h1></div>
-    <p style="font-weight: bold; color:rgb(224, 138, 26); padding-left: 25px;">Dr.S.Padmini</p>
-    <p style ="font-weight: lighter; color: rgb(237, 230, 220); padding-left: 25px;">Contact : 98842540409</p>
-
-<h3 style="color:rgb(237, 230, 220) "> Contact Form </h3>
-
-<div class="container">
-  <form id="form" onsubmit="confirm('Are you sure you want to submit ?')">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
-
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email_id" placeholder="Email id" required>
-    <label for="mobileno">Mobile no</label>
-    <input type="text" name="mobileno" minlength="10" maxlength="10" id="mobileno" placeholder="Mobile no" required>
+    <div class="contact-card">
+      <div style="font-size:1.1rem; color:#e08a1a; font-weight:600; margin-bottom:6px; letter-spacing:0.5px;">Guiding Faculty Advisor:</div>
+      <span class="contact-name">Dr.S.Padmini</span>
+      <div class="contact-info">
+        <div style="font-size:1.05rem; color:#e08a1a; font-weight:600; margin:10px 0 4px 0; letter-spacing:0.5px;">Teammates:</div>
+        <span class="contact-name">Y Nisanth</span><br>
+        <span class="contact-name">M Upendra</span><br>
+        <span class="contact-name">P Teja</span>
+      </div>
+    </div>
+    <h3 style="color:rgb(237, 230, 220) "> Contact Form </h3>
+    <div class="container">
+      <form id="form" onsubmit="confirm('Are you sure you want to submit ?')">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email_id" placeholder="Email id" required>
+        <label for="mobileno">Mobile no</label>
+        <input type="text" name="mobileno" minlength="10" maxlength="10" id="mobileno" placeholder="Mobile no" required>
+        <label for="city">City</label>
+        <input type="text" name="City" id="City" placeholder="City" required>
+        <label for="Message">Subject</label>
+        <textarea id="Message" name="Message" placeholder="Write something.." style="height:200px"></textarea required> 
+        <input type="submit" value="Submit"onclick="validate();phone()">
+      </form>
+    </div>
+    <center>
+      <h3 style="color:rgb(207, 153, 83)">You can always share your experience about us at </h3>
+      <div class="social-icons">
+        <a href="https://facebook.com"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://linkedIn.com"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="https://instagram.com"><ion-icon name="logo-instagram"></ion-icon></a>
+      </div>
+    </center>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    window.onscroll = function() {myFunction()};
+     
+    var s = document.getElementById("myHeader");
+    var sticky = s.offsetTop;
     
-    
-    <label for="city">City</label>
-    <input type="text" name="City" id="City" placeholder="City" required>
-
-
-   <label for="Message">Subject</label>
-    <textarea id="Message" name="Message" placeholder="Write something.." style="height:200px"></textarea required> 
-
-    <input type="submit" value="Submit"onclick="validate();phone()">
-  </form>
-</div>
-<center>
-    <h3 style="color:rgb(207, 153, 83)">You can always share your experience about us at </h3>
-    <a href="https://facebook.com"><ion-icon name="logo-facebook"></ion-icon></a>
-    <a href="https://linkedIn.com"><ion-icon name="logo-linkedin"></ion-icon></a>
-    <a href="https://instagram.com"><ion-icon name="logo-instagram"></ion-icon></a>
-</center>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script>
-  window.onscroll = function() {myFunction()};
-   
-   var s = document.getElementById("myHeader");
-   var sticky = s.offsetTop;
-   
-   function myFunction() {
-     if (window.pageYOffset > sticky) {
-       s.classList.add("sticky");
-     } else {
-       s.classList.remove("sticky");
-     }
-   }
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        s.classList.add("sticky");
+      } else {
+        s.classList.remove("sticky");
+      }
+    }
   </script>
-</body></div>
+</body>
+</div>
 
 </html>

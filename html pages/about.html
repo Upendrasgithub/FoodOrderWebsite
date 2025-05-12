@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - SRM Hotel</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                min-height: 100vh;
+                color: #2d3436;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #1a1a1a, #2d3436);
+                padding: 1rem 2rem;
+                box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .nav-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-left {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .nav-right {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .logo {
+                color: #ffd700;
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-decoration: none;
+                transition: transform 0.3s ease;
+            }
+
+            .logo:hover {
+                transform: scale(1.05);
+            }
+
+            .nav-button {
+                background: linear-gradient(135deg, #ffd700, #ffa502);
+                color: #1a1a1a;
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .nav-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            }
+
+            .about-container {
+                max-width: 1200px;
+                margin: 2rem auto;
+                padding: 2rem;
+            }
+
+            .about-title {
+                text-align: center;
+                color: #2d3436;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                position: relative;
+                padding-bottom: 1rem;
+            }
+
+            .about-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 4px;
+                background: linear-gradient(90deg, #ffd700, #ffa502);
+                border-radius: 2px;
+            }
+
+            .team-section {
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                margin-bottom: 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .team-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, #ffd700, #ffa502);
+            }
+
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .team-member {
+                background: #f8f9fa;
+                border-radius: 15px;
+                padding: 2rem;
+                text-align: center;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .team-member::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, #ffd700, #ffa502);
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .team-member:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .team-member:hover::before {
+                transform: scaleX(1);
+            }
+
+            .member-image {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                margin: 0 auto 1.5rem;
+                object-fit: cover;
+                border: 4px solid #ffd700;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .team-member:hover .member-image {
+                transform: scale(1.05);
+            }
+
+            .member-name {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #2d3436;
+                margin-bottom: 0.5rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            .member-name::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 2px;
+                background: #ffd700;
+                border-radius: 1px;
+            }
+
+            .member-role {
+                color: #636e72;
+                margin-bottom: 1rem;
+                font-weight: 500;
+            }
+
+            .member-description {
+                color: #2d3436;
+                font-size: 0.95rem;
+                line-height: 1.7;
+                padding: 0 1rem;
+            }
+
+            .about-text {
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto 3rem;
+                color: #2d3436;
+                line-height: 1.8;
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .social-link {
+                color: #2d3436;
+                font-size: 1.2rem;
+                transition: all 0.3s ease;
+            }
+
+            .social-link:hover {
+                color: #ffd700;
+                transform: translateY(-2px);
+            }
+
+            @media (max-width: 768px) {
+                .nav-container {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .team-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .about-title {
+                    font-size: 2rem;
+                }
+
+                .member-image {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav-container">
+                <div class="nav-left">
+                    <a href="home.html" class="logo">
+                        <ion-icon name="home-outline"></ion-icon>
+                        SRM Hotel
+                    </a>
+                    <a href="menu.html" class="nav-button">
+                        <ion-icon name="restaurant-outline"></ion-icon>
+                        Menu
+                    </a>
+                </div>
+                <div class="nav-right">
+                    <a href="cart.html" class="nav-button">
+                        <ion-icon name="cart-outline"></ion-icon>
+                        Cart <span>0</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="about-container">
+            <h1 class="about-title">About Our Team</h1>
+            
+            <div class="about-text">
+                Welcome to SRM Hotel's digital platform! We are a dedicated team of students passionate about creating an exceptional dining experience. Our website combines modern technology with traditional hospitality to bring you the best of both worlds.
+            </div>
+
+            <div class="team-section">
+                <h2 class="about-title">Meet Our Team</h2>
+                <div class="team-grid">
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <img src="images/IMG_4125.jpg" alt="M Upendranadh" class="member-image">
+                        <h3 class="member-name">M Upendranadh</h3>
+                        <p class="member-role">Project Leader</p>
+                        <p class="member-description">
+                            Led the Food Order Management Website project, overseeing planning, coordination, and execution. Ensured timely progress, maintained code quality, and facilitated communication between stakeholders to meet all functional and design requirements efficiently.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+                            <a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-member">
+                        <img src="images/IMG_7140.jpg" alt="Y Nisanth surendar" class="member-image">
+                        <h3 class="member-name">Y Nisanth surendar</h3>
+                        <p class="member-role">Backend Developer</p>
+                        <p class="member-description">
+                            Handled server-side development using PHP and MySQL. Developed robust database structures, implemented secure user authentication, and ensured smooth data flow between client and server for optimal performance.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+                            <a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-member">
+                        <img src="images/IMG_7139.jpg" alt="P Teja" class="member-image">
+                        <h3 class="member-name">P Teja</h3>
+                        <p class="member-role">Frontend Developer</p>
+                        <p class="member-description">
+                            Focused on creating an intuitive user interface using HTML, CSS, and JavaScript. Designed responsive layouts, implemented smooth navigation, and ensured a seamless user experience across all devices.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a>
+                            <a href="#" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html> 
